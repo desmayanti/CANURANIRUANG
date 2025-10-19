@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Ruang Nurani Rakyat</title>
+    
+    <!-- GANTI: path relatif -->
+    <link rel="stylesheet" href="css/main.css"> 
+    <link rel="stylesheet" href="css/login.css"> 
+    <link rel="stylesheet" href="css/form_notification.css"> 
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    
+    <div class="login-container" id="loginForm">
+        <div class="auth-header">
+            <span class="auth-logo">
+                <i class="fas fa-user-secret" style="background: var(--red-alert); color: white; border-radius: 50%; padding: 12px; box-shadow: 0 0 10px rgba(0,0,0,0.3);"></i>
+            </span>
+            <h1>Ruang Nurani Rakyat</h1>
+            <p>Platform Pelaporan Anti <span style="font-weight: bold; color: var(--red-alert);">Tikus Berdasi</span></p>
+        </div>
+
+        <form id="mainLoginForm" onsubmit="handleLogin(event)">
+            <div class="input-group">
+                <label for="username">Username/Email</label>
+                <input type="text" id="username" placeholder="Masukkan nama pengguna" required>
+                <i class="fas fa-user input-icon"></i>
+            </div>
+            
+            <div class="input-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" placeholder="Masukkan password" required>
+                <i class="fas fa-lock input-icon"></i>
+            </div>
+            
+            <button type="submit" class="btn-primary">LOGIN</button>
+        </form>
+
+        <div class="alt-action">
+            Belum punya akun? <a href="#" onclick="alert('Arahkan ke halaman Daftar')">Daftar di sini</a>
+        </div>
+    </div>
+    
+    <div id="successModal" class="modal-notif-custom hidden">
+        <div class="modal-notif-content success">
+            <span class="close-btn-notif" onclick="closeSuccessModal()">&times;</span>
+            <i class="fas fa-check-circle modal-icon"></i>
+            <h2>Login Berhasil!</h2>
+            <p id="modalMessage">Anda berhasil masuk. Kami akan mengarahkan Anda ke dashboard.</p>
+            <button class="btn btn-primary" onclick="redirectToDashboard()" style="background-color: var(--green-success);">Lanjutkan</button>
+        </div>
+    </div>
+
+    <script>
+        let destinationURL = '';
+
+        function handleLogin(event) {
+            event.preventDefault();
+            const username = document.getElementById('username').value;
+            
+            // 1. Tentukan URL tujuan (pakai RELATIF path)
+            if (username.toLowerCase().includes('admin')) {
+                destinationURL = 'pages/admin_dashboard.html';
+                document.getElementById('modalMessage').innerHTML = 'Selamat datang kembali, <b>Admin</b>!<br>Kami akan mengarahkan Anda ke dashboard.';
+            } else {
+                destinationURL = 'pages/user_page.html';
+                document.getElementById('modalMessage').innerHTML = 'Selamat datang, <b>Warga Peduli</b>!<br>Kami akan mengarahkan Anda ke dashboard Anda.';
+            }
+            
+            // 2. Tampilkan Modal Pop-up
+            document.getElementById('successModal').classList.remove('hidden');
+            document.getElementById('mainLoginForm').reset();
+        }
+
+        function closeSuccessModal() {
+            document.getElementById('successModal').classList.add('hidden');
+        }
+
+        function redirectToDashboard() {
+            closeSuccessModal();
+            if (destinationURL) {
+                window.location.href = destinationURL;
+            }
+        }
+    </script>
+</body>
+</html>

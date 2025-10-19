@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Admin - Sistem Aspirasi Warga</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/dashboard.css">
+    
+    <link rel="stylesheet" href="../css/admin_dashboard.css"> 
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="dashboard-layout">
+        
+        <aside class="sidebar">
+            <div class="logo">
+                <i class="fas fa-user-shield logo-icon" style="color: var(--red-alert);"></i> ADMIN <span style="color:white;"> SISTEM</span>
+            </div> 
+            
+            <nav class="nav-menu">
+                <a href="admin_dashboard.html" class="nav-item active"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+                <a href="admin_laporan.html" class="nav-item"><i class="fas fa-file-alt"></i> Keluhan Masuk</a>
+                <a href="admin_penanganan.html" class="nav-item"><i class="fas fa-tools"></i> Cara Penanganan</a>
+                <a href="admin_uneg_uneg.html" class="nav-item"><i class="fas fa-comments"></i> Uneg-Uneg Warga</a>
+                <a href="admin_settings.html" class="nav-item settings-btn"><i class="fas fa-cogs"></i> Pengaturan</a>
+                <a href="../index.html" class="nav-item logout-btn"><i class="fas fa-sign-out-alt"></i> Logout</a>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <header class="header">
+                <div class="header-welcome">
+                    <h2>Halo, <span class="admin-name-highlight">Agus Sutrisno</span>!</h2>
+                    <p>Fokus utama Anda: Tindak lanjuti 7 laporan baru. Status sistem: *Siaga*.</p>
+                </div>
+                <div class="profile-card-small">
+                    <img src="https://via.placeholder.com/50/8B0000/FFFFFF?text=A" alt="Admin Profile" class="profile-avatar">
+                    <div class="profile-info">
+                        <span class="profile-name">Kepala Admin IT</span>
+                        <a href="admin_profile.html" class="btn-profile"><i class="fas fa-user-circle"></i> Lihat Profil</a>
+                    </div>
+                </div>
+            </header>
+            
+            <section class="dashboard-grid-main">
+                
+                <div class="grid-left-summary">
+                    
+                    <div class="main-stat-card card-urgent">
+                        <div class="stat-icon-large"><i class="fas fa-bell"></i></div>
+                        <div>
+                            <span class="stat-number-main">7</span>
+                            <span class="stat-label-main">Laporan BARU (Wajib Ditindak)</span>
+                        </div>
+                        <a href="admin_laporan.html" class="btn btn-action-main">TINDAK SEKARANG <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                    
+                    <div class="stats-mini-grid">
+                        <div class="mini-card stat-total-small">
+                            <i class="fas fa-chart-line"></i>
+                            <span class="mini-number">125</span>
+                            <span class="mini-label">Total Keluhan</span>
+                        </div>
+                        <div class="mini-card stat-proses-small">
+                            <i class="fas fa-cogs"></i>
+                            <span class="mini-number">18</span>
+                            <span class="mini-label">Sedang Diproses</span>
+                        </div>
+                        <div class="mini-card stat-selesai-small">
+                            <i class="fas fa-check-double"></i>
+                            <span class="mini-number">100</span>
+                            <span class="mini-label">Berhasil Selesai</span>
+                        </div>
+                    </div>
+
+                    <div class="chart-card">
+                        <h3><i class="fas fa-chart-area"></i> Waktu Respon Rata-Rata (Bulan Ini)</h3>
+                        <div class="chart-content">
+                            <span class="time-average">2 Hari 5 Jam</span>
+                            <div class="chart-area-simulasi">
+                                <div class="line-chart-dots">
+                                    <span style="left: 10%; bottom: 40%;" data-value="4d"></span>
+                                    <span style="left: 30%; bottom: 20%;" data-value="3d"></span>
+                                    <span style="left: 50%; bottom: 60%;" data-value="5d"></span>
+                                    <span style="left: 70%; bottom: 30%;" data-value="3d"></span>
+                                    <span style="left: 90%; bottom: 50%;" data-value="4d"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+                
+                <div class="grid-right-actions">
+                    
+                    <div class="quick-action-list">
+                        <h3><i class="fas fa-bolt"></i> Quick Actions</h3>
+                        <a href="admin_laporan.html" class="action-btn-list primary">
+                            <i class="fas fa-file-alt"></i> Lihat Semua Laporan Baru (7)
+                        </a>
+                        <a href="admin_uneg_uneg.html" class="action-btn-list info">
+                            <i class="fas fa-comments"></i> Tanggapi Uneg-Uneg (4 Baru)
+                        </a>
+                        <a href="#" class="action-btn-list success">
+                            <i class="fas fa-thumbs-up"></i> Verifikasi Laporan Selesai
+                        </a>
+                        <a href="admin_settings.html" class="action-btn-list warning">
+                            <i class="fas fa-bell"></i> Cek Notifikasi Sistem
+                        </a>
+                    </div>
+                    
+                    <div class="activity-log-card">
+                        <h3><i class="fas fa-history"></i> Log Aktivitas Terbaru</h3>
+                        <ul class="activity-list">
+                            <li><i class="fas fa-circle activity-new"></i> L0020 (Urgent) diterima.</li>
+                            <li><i class="fas fa-circle activity-process"></i> L0018 di-disposisi ke Dinas PU.</li>
+                            <li><i class="fas fa-circle activity-done"></i> L0016 status diubah menjadi Selesai.</li>
+                            <li><i class="fas fa-circle activity-new"></i> Aspirasi baru dari Warga Blok M masuk.</li>
+                        </ul>
+                        <button class="btn btn-view-all">Lihat Semua Log</button>
+                    </div>
+                    
+                </div>
+                
+            </section>
+        </main>
+    </div>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const navItems = document.querySelectorAll('.nav-item');
+            navItems.forEach(item => {
+                item.addEventListener('click', function(e) {
+                    const href = this.getAttribute('href');
+                    if (href && href !== '#') {
+                        window.location.href = href;
+                    }
+                    e.preventDefault(); 
+                });
+                // Set active class saat memuat halaman
+                if(window.location.href.includes(item.getAttribute('href').replace('../', ''))) {
+                     navItems.forEach(i => i.classList.remove('active'));
+                     item.classList.add('active');
+                }
+            });
+        });
+    </script> 
+</body>
+</html>

@@ -1,0 +1,141 @@
+/* ==================================== */
+/* css/main.css - PONDASI GAYA GLOBAL (MAROON, PUTIH TULANG, DAN AKSEL) */
+/* ==================================== */
+
+/* 1. DEFINISI VARIABEL WARNA TEMA */
+:root {
+    /* Warna Utama (Maroon / Merah Bata Tua) */
+    --maroon: #800000;
+    --maroon-dark: #5C0000; 
+    
+    /* Warna Latar Belakang & Teks */
+    --bone-white: #f5f5f5; /* Putih Tulang / Off-White */
+    --bone-white-dark: #e8e8e8;
+    --text-color: #212121; /* Lebih gelap untuk kontras tajam */
+    --text-light: #616161;
+    
+    /* Warna Aksen & Status (LEBIH VIBRANT) */
+    --red-alert: #E53935;     /* Merah (Bahaya/Laporan Baru) */
+    --green-success: #43A047; /* Hijau (Selesai/Sukses) */
+    --orange-warning: #FFB300; /* Kuning/Jingga (Diproses/Perhatian) */
+    --blue-info: #039BE5;    /* Biru (Informasi/Edit) */
+
+    /* Variabel Shadow & Transisi */
+    --default-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    --hover-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    --transition-speed: 0.3s;
+}
+
+
+/* 2. RESET DAN FONT GLOBAL */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    /* Pastikan Anda sudah link font Poppins di HTML! */
+    font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bone-white);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+h1, h2, h3, h4 {
+    color: var(--maroon-dark);
+    font-weight: 700;
+}
+
+/* 3. UTILITY DAN CONTAINER */
+.container {
+    max-width: 1280px; /* Sedikit lebih lebar */
+    margin: 0 auto;
+    padding: 0 25px;
+}
+
+/* 4. TOMBOL UMUM (BUTTONS) - DITAMBAH SHADOW & HOVER */
+.btn {
+    padding: 10px 22px;
+    border-radius: 8px; /* Lebih halus */
+    font-size: 1em;
+    cursor: pointer;
+    border: none;
+    text-align: center;
+    text-decoration: none;
+    display: inline-flex; /* Agar ikon dan teks rapi */
+    align-items: center;
+    transition: all var(--transition-speed);
+    font-weight: 600;
+}
+.btn i {
+    margin-right: 8px;
+}
+
+.btn-primary {
+    background-color: var(--maroon);
+    color: white;
+    box-shadow: 0 4px 10px rgba(128, 0, 0, 0.4); /* Shadow khas maroon */
+}
+
+.btn-primary:hover {
+    background-color: var(--maroon-dark);
+    transform: translateY(-2px); /* Efek terangkat */
+    box-shadow: 0 6px 15px rgba(128, 0, 0, 0.6);
+}
+
+.btn-secondary {
+    background-color: var(--bone-white-dark);
+    color: var(--text-color);
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.btn-secondary:hover {
+    background-color: #ddd;
+    transform: translateY(-1px);
+}
+
+
+/* 5. GAYA FORM & INPUT DASAR - DITAMBAH FOKUS MAROON */
+input[type="text"],
+input[type="password"],
+input[type="email"],
+textarea,
+select {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px; /* Sudut lebih halus */
+    font-size: 1em;
+    color: var(--text-color);
+    background-color: white;
+    transition: all var(--transition-speed);
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+    border-color: var(--maroon);
+    outline: none;
+    box-shadow: 0 0 8px rgba(128, 0, 0, 0.4); /* Efek glow maroon saat fokus */
+}
+/* 6. GAYA UTAMA UNTUK KONTEN (Card/Section) */
+.content-area {
+    padding: 0;
+}
+
+.card-base {
+    background: white;
+    padding: 30px; /* Padding lebih besar */
+    border-radius: 15px; /* Lebih membulat */
+    box-shadow: var(--default-shadow); /* Shadow default */
+    margin-bottom: 30px;
+    border-top: 5px solid var(--maroon); /* Garis atas yang kuat */
+    transition: box-shadow var(--transition-speed);
+}
+
+.card-base:hover {
+    box-shadow: var(--hover-shadow);
+}

@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uneg-Uneg Warga - Administrasi</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/dashboard.css">
+    
+    <link rel="stylesheet" href="../css/admin_uneg_uneg.css"> 
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="dashboard-layout">
+        
+        <aside class="sidebar">
+            <div class="logo">
+                <i class="fas fa-user-shield logo-icon" style="color: var(--red-alert);"></i> ADMIN <span style="color:white;"> SISTEM</span>
+            </div> 
+            
+            <nav class="nav-menu">
+                <a href="admin_dashboard.html" class="nav-item"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+                <a href="admin_laporan.html" class="nav-item"><i class="fas fa-file-alt"></i> Keluhan Masuk</a>
+                <a href="admin_penanganan.html" class="nav-item"><i class="fas fa-tools"></i> Cara Penanganan</a>
+                <a href="admin_uneg_uneg.html" class="nav-item active"><i class="fas fa-comments"></i> Uneg-Uneg Warga</a>
+                <a href="../index.html" class="nav-item logout-btn"><i class="fas fa-sign-out-alt"></i> Logout</a>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <header class="header">
+                <h2>Kotak Uneg-Uneg & Aspirasi Warga</h2>
+                <p>Kelola semua masukan, kritik, dan saran umum dari masyarakat.</p>
+                <div class="alert alert-info alert-auto-close" style="margin-top: 15px;">
+                    <i class="fas fa-info-circle"></i> **Info:** Total ada 12 masukan. Prioritaskan 4 yang statusnya 'Baru'.
+                </div>
+            </header>
+
+            <section class="content-area">
+                
+                <div class="uneg-filter-section" style="margin-bottom: 25px;">
+                    <select class="input-filter">
+                        <option value="all">Filter Status: Semua</option>
+                        <option value="Baru">Baru (4)</option>
+                        <option value="Diproses">Diproses (4)</option>
+                        <option value="Selesai">Selesai (4)</option>
+                    </select>
+                    <input type="text" class="input-filter" placeholder="Cari berdasarkan Judul...">
+                </div>
+
+                <div class="uneg-uneg-grid">
+                    
+                    <div class="uneg-card" data-status="Baru">
+                        <div class="card-header-uneg"><i class="fas fa-bullhorn"></i> Pungutan Liar di Kantor Kelurahan</div>
+                        <p class="card-text-uneg">Ada oknum yang meminta uang "pelicin" untuk mengurus surat pindah. Ini sangat meresahkan warga. Mohon ditindak tegas sesuai peraturan yang berlaku dan transparan. *URGENT*</p>
+                        <div class="card-footer-uneg">
+                            <span class="uneg-info"><i class="fas fa-user"></i> Anonim (ID #4)</span>
+                            <button class="btn btn-detail" onclick="openUnegModal('4')"><i class="fas fa-eye"></i> Tanggapi</button>
+                        </div>
+                    </div>
+                    
+                    <div class="uneg-card" data-status="Baru">
+                        <div class="card-header-uneg"><i class="fas fa-bullhorn"></i> Kritik Jam Operasional Puskesmas</div>
+                        <p class="card-text-uneg">Jam operasional Puskesmas pembantu di desa kami terlalu singkat. Kami yang pulang kerja sore tidak sempat berobat. Mohon diperpanjang hingga pukul 9 malam.</p>
+                        <div class="card-footer-uneg">
+                            <span class="uneg-info"><i class="fas fa-user"></i> Anonim (ID #1)</span>
+                            <button class="btn btn-detail" onclick="openUnegModal('1')"><i class="fas fa-eye"></i> Tanggapi</button>
+                        </div>
+                    </div>
+
+                    <div class="uneg-card" data-status="Diproses">
+                        <div class="card-header-uneg"><i class="fas fa-comment-dots"></i> Saran Lokasi TPS Mobile</div>
+                        <p class="card-text-uneg">Perlu ada tempat pembuangan sampah (TPS) mobile di area padat penduduk setiap akhir pekan. Agar tidak ada yang membuang sampah sembarangan di sungai. Ide ini bagus!</p>
+                        <div class="card-footer-uneg">
+                            <span class="uneg-info"><i class="fas fa-calendar-alt"></i> 17 Okt 2025</span>
+                            <button class="btn btn-detail" onclick="openUnegModal('2')"><i class="fas fa-eye"></i> Tanggapi</button>
+                        </div>
+                    </div>
+
+                    <div class="uneg-card" data-status="Diproses">
+                        <div class="card-header-uneg"><i class="fas fa-comment-dots"></i> Usulan Wifi Gratis Area Sekolah</div>
+                        <p class="card-text-uneg">Untuk mendukung proses belajar online, kami usulkan pemasangan titik WiFi gratis di sekitar area sekolah menengah yang mudah diakses siswa dan masyarakat umum.</p>
+                        <div class="card-footer-uneg">
+                            <span class="uneg-info"><i class="fas fa-calendar-alt"></i> 10 Okt 2025</span>
+                            <button class="btn btn-detail" onclick="openUnegModal('5')"><i class="fas fa-eye"></i> Tanggapi</button>
+                        </div>
+                    </div>
+
+                    <div class="uneg-card" data-status="Selesai">
+                        <div class="card-header-uneg"><i class="fas fa-check-circle"></i> Apresiasi Petugas Kebersihan</div>
+                        <p class="card-text-uneg">Kami sangat mengapresiasi kinerja petugas kebersihan yang sangat sigap dan responsif membersihkan lingkungan kami setelah banjir kecil kemarin. Terima kasih banyak atas kerjanya!</p>
+                        <div class="card-footer-uneg">
+                            <span class="uneg-info"><i class="fas fa-user"></i> Warga Blok C (ID #3)</span>
+                            <button class="btn btn-detail" onclick="openUnegModal('3')"><i class="fas fa-eye"></i> Detail</button>
+                        </div>
+                    </div>
+                    
+                    <div class="uneg-card" data-status="Selesai">
+                        <div class="card-header-uneg"><i class="fas fa-check-circle"></i> Perbaikan Drainase Berhasil</div>
+                        <p class="card-text-uneg">Saluran drainase yang mampet di Jl. Sudirman sudah diperbaiki. Banjir kecil saat hujan deras sudah tidak terjadi lagi. Terima kasih atas respons cepatnya! Mantap!</p>
+                        <div class="card-footer-uneg">
+                            <span class="uneg-info"><i class="fas fa-user"></i> Pengguna Jasa (ID #6)</span>
+                            <button class="btn btn-detail" onclick="openUnegModal('6')"><i class="fas fa-eye"></i> Detail</button>
+                        </div>
+                    </div>
+                    
+                    <div class="uneg-card" data-status="Baru">
+                        <div class="card-header-uneg"><i class="fas fa-bullhorn"></i> Kurangnya Rambu Lalu Lintas</div>
+                        <p class="card-text-uneg">Di persimpangan dekat lampu merah utama, banyak rambu yang sudah pudar atau hilang, menyebabkan kebingungan dan rawan kecelakaan di jam sibuk. Perlu penambahan rambu.</p>
+                        <div class="card-footer-uneg">
+                            <span class="uneg-info"><i class="fas fa-user"></i> Anonim (ID #7)</span>
+                            <button class="btn btn-detail" onclick="openUnegModal('7')"><i class="fas fa-eye"></i> Tanggapi</button>
+                        </div>
+                    </div>
+
+                    <div class="uneg-card" data-status="Diproses">
+                        <div class="card-header-uneg"><i class="fas fa-comment-dots"></i> Penertiban Pedagang Kaki Lima</div>
+                        <p class="card-text-uneg">PKL yang berjualan di trotoar membuat pejalan kaki harus turun ke jalan. Mohon dicarikan lokasi relokasi yang layak untuk mereka agar sama-sama nyaman.</p>
+                        <div class="card-footer-uneg">
+                            <span class="uneg-info"><i class="fas fa-calendar-alt"></i> 05 Okt 2025</span>
+                            <button class="btn btn-detail" onclick="openUnegModal('8')"><i class="fas fa-eye"></i> Tanggapi</button>
+                        </div>
+                    </div>
+                    
+                    <div class="uneg-card" data-status="Selesai">
+                        <div class="card-header-uneg"><i class="fas fa-check-circle"></i> Pengadaan Tempat Sampah</div>
+                        <p class="card-text-uneg">Permintaan tempat sampah baru di sekitar taman kota sudah dipenuhi. Kebersihan taman sekarang lebih terjaga dan terlihat rapi. Lingkungan jadi lebih bersih!</p>
+                        <div class="card-footer-uneg">
+                            <span class="uneg-info"><i class="fas fa-user"></i> Ibu Rina (ID #9)</span>
+                            <button class="btn btn-detail" onclick="openUnegModal('9')"><i class="fas fa-eye"></i> Detail</button>
+                        </div>
+                    </div>
+                    
+                    <div class="uneg-card" data-status="Baru">
+                        <div class="card-header-uneg"><i class="fas fa-bullhorn"></i> Kritik Lambatnya Respon Damkar</div>
+                        <p class="card-text-uneg">Respons mobil pemadam kebakaran saat ada insiden kebakaran kecil di komplek sebelah sangat lambat. Perlu adanya pos pemadam terdekat di wilayah padat penduduk.</p>
+                        <div class="card-footer-uneg">
+                            <span class="uneg-info"><i class="fas fa-user"></i> Anonim (ID #10)</span>
+                            <button class="btn btn-detail" onclick="openUnegModal('10')"><i class="fas fa-eye"></i> Tanggapi</button>
+                        </div>
+                    </div>
+
+                    <div class="uneg-card" data-status="Diproses">
+                        <div class="card-header-uneg"><i class="fas fa-comment-dots"></i> Perlu Sosialisasi Program Baru</div>
+                        <p class="card-text-uneg">Banyak warga yang belum tahu tentang program bantuan UMKM terbaru. Mohon dilakukan sosialisasi yang lebih merata melalui RT/RW dan media sosial resmi.</p>
+                        <div class="card-footer-uneg">
+                            <span class="uneg-info"><i class="fas fa-calendar-alt"></i> 01 Okt 2025</span>
+                            <button class="btn btn-detail" onclick="openUnegModal('11')"><i class="fas fa-eye"></i> Tanggapi</button>
+                        </div>
+                    </div>
+
+                    <div class="uneg-card" data-status="Selesai">
+                        <div class="card-header-uneg"><i class="fas fa-check-circle"></i> Pengelolaan Dana Bantuan</div>
+                        <p class="card-text-uneg">Apresiasi atas transparansi pengelolaan dana bantuan pendidikan tahun ini. Laporannya sangat jelas dan mudah dipahami oleh publik. Transparansi yang baik!</p>
+                        <div class="card-footer-uneg">
+                            <span class="uneg-info"><i class="fas fa-user"></i> Komunitas (ID #12)</span>
+                            <button class="btn btn-detail" onclick="openUnegModal('12')"><i class="fas fa-eye"></i> Detail</button>
+                        </div>
+                    </div>
+                    
+                </div>
+            </section>
+            
+            <div id="unegModal" class="modal-notif-custom hidden">
+                <div class="modal-notif-content" style="max-width: 600px;">
+                    <span class="close-btn-notif" onclick="closeUnegModal()">&times;</span>
+                    <h2 id="modalTitleUneg">Detail Uneg-Uneg #ID</h2>
+                    <p><strong>Judul:</strong> <span id="unegJudul"></span></p>
+                    <p><strong>Pengirim:</strong> <span id="unegPengirim"></span></p>
+                    <hr>
+                    <p><strong>Isi Lengkap:</strong></p>
+                    <div class="card-base" style="background:#f5f5f5;">
+                         <p id="unegIsi">Ini adalah isi lengkap dari uneg-uneg yang dikirimkan.</p>
+                    </div>
+                    
+                    <form onsubmit="submitTanggapan(event)">
+                        <input type="hidden" id="currentUnegId" value="">
+                        <div class="input-group-setting">
+                            <label for="tanggapanTextarea">Tanggapan/Aksi Admin:</label>
+                            <textarea id="tanggapanTextarea" rows="4" placeholder="Tulis tanggapan atau aksi yang akan dilakukan." required></textarea>
+                        </div>
+                        
+                        <div class="input-group-setting">
+                            <label for="statusUneg">Ubah Status:</label>
+                            <select id="statusUneg" required>
+                                <option value="Baru">Baru</option>
+                                <option value="Diproses">Diproses</option>
+                                <option value="Selesai">Selesai (Sudah Ditanggapi)</option>
+                            </select>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary"><i class="fas fa-paper-plane"></i> Simpan Tanggapan</button>
+                        <button type="button" class="btn btn-delete" onclick="confirmDeleteUneg(document.getElementById('currentUnegId').value)" style="margin-left: 10px;">
+                            <i class="fas fa-trash-alt"></i> Hapus
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+        </main>
+    </div>
+
+    <script>
+        // Simulasikan data (di dunia nyata ini dari database)
+        const unegData = {
+            '1': {judul: 'Kritik Jam Operasional Puskesmas', pengirim: 'Anonim', isi: 'Jam operasional Puskesmas pembantu di desa kami terlalu singkat. Kami yang pulang kerja sore tidak sempat berobat. Mohon diperpanjang hingga pukul 9 malam.', status: 'Baru'},
+            '2': {judul: 'Saran Lokasi TPS Mobile', pengirim: 'Warga Peduli', isi: 'Perlu ada tempat pembuangan sampah (TPS) mobile di area padat penduduk setiap akhir pekan. Agar tidak ada yang membuang sampah sembarangan di sungai.', status: 'Diproses'},
+            '3': {judul: 'Apresiasi Petugas Kebersihan', pengirim: 'Warga Blok C', isi: 'Kami sangat mengapresiasi kinerja petugas kebersihan yang sangat sigap dan responsif membersihkan lingkungan kami setelah banjir kecil kemarin. Terima kasih!', status: 'Selesai'},
+            '4': {judul: 'Pungutan Liar di Kantor Kelurahan', pengirim: 'Anonim', isi: 'Ada oknum yang meminta uang "pelicin" untuk mengurus surat pindah. Ini sangat meresahkan warga. Mohon ditindak tegas sesuai peraturan yang berlaku.', status: 'Baru'},
+            '5': {judul: 'Usulan Wifi Gratis Area Sekolah', pengirim: 'Komunitas Guru', isi: 'Untuk mendukung proses belajar online, kami usulkan pemasangan titik WiFi gratis di sekitar area sekolah menengah yang mudah diakses siswa.', status: 'Diproses'},
+            '6': {judul: 'Perbaikan Drainase Berhasil', pengirim: 'Pengguna Jasa', isi: 'Saluran drainase yang mampet di Jl. Sudirman sudah diperbaiki. Banjir kecil saat hujan deras sudah tidak terjadi lagi. Terima kasih atas respons cepatnya!', status: 'Selesai'},
+            '7': {judul: 'Kurangnya Rambu Lalu Lintas', pengirim: 'Anonim', isi: 'Di persimpangan dekat lampu merah utama, banyak rambu yang sudah pudar atau hilang, menyebabkan kebingungan dan rawan kecelakaan di jam sibuk.', status: 'Baru'},
+            '8': {judul: 'Penertiban Pedagang Kaki Lima', pengirim: 'Pejalan Kaki', isi: 'PKL yang berjualan di trotoar membuat pejalan kaki harus turun ke jalan. Mohon dicarikan lokasi relokasi yang layak untuk mereka.', status: 'Diproses'},
+            '9': {judul: 'Pengadaan Tempat Sampah', pengirim: 'Ibu Rina', isi: 'Permintaan tempat sampah baru di sekitar taman kota sudah dipenuhi. Kebersihan taman sekarang lebih terjaga dan terlihat rapi.', status: 'Selesai'},
+            '10': {judul: 'Kritik Lambatnya Respon Damkar', pengirim: 'Anonim', isi: 'Respons mobil pemadam kebakaran saat ada insiden kebakaran kecil di komplek sebelah sangat lambat. Perlu adanya pos pemadam terdekat.', status: 'Baru'},
+            '11': {judul: 'Perlu Sosialisasi Program Baru', pengirim: 'Perwakilan RT', isi: 'Banyak warga yang belum tahu tentang program bantuan UMKM terbaru. Mohon dilakukan sosialisasi yang lebih merata melalui RT/RW.', status: 'Diproses'},
+            '12': {judul: 'Pengelolaan Dana Bantuan', pengirim: 'Komunitas Transparansi', isi: 'Apresiasi atas transparansi pengelolaan dana bantuan pendidikan tahun ini. Laporannya sangat jelas dan mudah dipahami oleh publik.', status: 'Selesai'},
+        };
+        
+        const unegModal = document.getElementById('unegModal');
+
+        function openUnegModal(id) {
+            unegModal.classList.remove('hidden');
+            const data = unegData[id];
+            
+            if (data) {
+                document.getElementById('modalTitleUneg').textContent = `Detail Uneg-Uneg #${id}`;
+                document.getElementById('unegJudul').textContent = data.judul;
+                document.getElementById('unegPengirim').textContent = data.pengirim;
+                document.getElementById('unegIsi').textContent = data.isi;
+                document.getElementById('statusUneg').value = data.status;
+                document.getElementById('currentUnegId').value = id;
+            }
+        }
+
+        function closeUnegModal() {
+            unegModal.classList.add('hidden');
+        }
+
+        function submitTanggapan(event) {
+            event.preventDefault();
+            const id = document.getElementById('currentUnegId').value;
+            const status = document.getElementById('statusUneg').value;
+            alert(`Uneg-Uneg #${id} diubah status menjadi: ${status}. (Simulasi Berhasil)`);
+            closeUnegModal();
+            // Di sini Anda perlu memuat ulang data atau memperbarui kartu di halaman
+        }
+
+        function confirmDeleteUneg(id) {
+            if (confirm(`Anda yakin ingin menghapus Uneg-Uneg ID #${id} secara permanen?`)) {
+                alert(`Uneg-Uneg ID #${id} berhasil dihapus. (Simulasi Berhasil)`);
+                closeUnegModal();
+            }
+        }
+    </script>
+    <script src="../js/main.js"></script>
+</body>
+</html>
