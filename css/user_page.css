@@ -1,0 +1,454 @@
+/* ==================================== */
+/* css/user_page.css - GAYA GABUNGAN UNTUK SEMUA HALAMAN USER */
+/* Ini harus di-import setelah main.css */
+/* ==================================== */
+
+/* ------------------------------------ */
+/* --- 1. LAYOUT DASAR & NAVIGASI --- */
+/* ------------------------------------ */
+
+.user-layout {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.user-main-content {
+    flex-grow: 1;
+    padding: 30px 40px;
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    background-color: var(--bone-white);
+}
+
+/* HEADER & NAVIGASI */
+.user-header {
+    background-color: white;
+    box-shadow: var(--default-shadow);
+    padding: 15px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 5px solid var(--primary-color); 
+}
+
+.user-header .logo {
+    font-size: 1.4em;
+    font-weight: 800;
+    color: var(--maroon-dark);
+}
+.user-header .logo-icon {
+    color: var(--red-alert);
+    margin-right: 5px;
+}
+
+.user-nav .nav-link {
+    color: var(--text-light);
+    margin-left: 20px;
+    padding: 8px 10px;
+    font-weight: 500;
+    transition: color 0.3s, border-bottom 0.3s;
+}
+
+.user-nav .nav-link.active {
+    color: var(--primary-color);
+    border-bottom: 3px solid var(--red-alert);
+}
+
+.user-nav .logout-btn {
+    color: var(--red-alert);
+    border: 1px solid var(--red-alert);
+    padding: 8px 15px;
+    border-radius: 5px;
+}
+.user-nav .logout-btn:hover {
+    background-color: var(--red-alert);
+    color: white;
+}
+
+/* ------------------------------------ */
+/* --- 2. DASHBOARD (user_page.html) --- */
+/* ------------------------------------ */
+
+.welcome-section {
+    margin: 30px 0;
+}
+.welcome-section h1 {
+    font-size: 2.2em;
+    font-weight: 700;
+    color: var(--maroon-dark);
+    margin-bottom: 5px;
+}
+.alert-info {
+    background-color: #d1ecf1;
+    border-color: #bee5eb;
+    color: #0c5460;
+    padding: 15px 20px;
+    border-radius: 8px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    margin-top: 15px;
+}
+.alert-info i { margin-right: 10px; }
+
+/* ACTION GRID */
+.action-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    margin-bottom: 40px;
+}
+.action-card {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: var(--default-shadow);
+    transition: transform 0.3s ease-in-out;
+    border-left: 6px solid;
+    text-decoration: none;
+    color: var(--text-dark);
+}
+.action-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+.action-card i {
+    font-size: 2.5em;
+    margin-bottom: 15px;
+    display: block;
+}
+.action-card.primary { border-left-color: var(--primary-color); }
+.action-card.warning { border-left-color: var(--orange-warning); }
+.action-card.info { border-left-color: var(--blue-info); }
+
+/* STATS OVERVIEW */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin-bottom: 40px;
+}
+.stat-card {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+.stat-card i { font-size: 1.8em; margin-bottom: 10px; }
+.stat-card .stat-number {
+    font-size: 2.2em;
+    font-weight: 800;
+    color: var(--maroon-dark);
+    display: block;
+    line-height: 1;
+}
+.primary-color-icon { color: var(--primary-color); }
+.warning-icon { color: var(--orange-warning); }
+.success-icon { color: var(--green-success); }
+.info-icon { color: var(--blue-info); }
+
+
+/* ------------------------------------ */
+/* --- 3. FORMULIR (user_page_lapor.html & user_page_profile.html) --- */
+/* ------------------------------------ */
+
+.form-page {
+    padding: 30px 40px;
+}
+.form-container-large {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: var(--default-shadow);
+    max-width: 800px;
+    margin: 0 auto;
+}
+.form-container-large h1 {
+    font-size: 1.8em;
+    color: var(--primary-color);
+    border-bottom: 2px solid var(--bone-white-dark);
+    padding-bottom: 15px;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+.description {
+    color: var(--text-light);
+    font-size: 0.9em;
+    margin-bottom: 30px;
+}
+.form-group {
+    margin-bottom: 20px;
+}
+.form-group label {
+    display: block;
+    font-weight: 600;
+    color: var(--maroon-dark);
+    margin-bottom: 8px;
+}
+.form-group .required {
+    color: var(--red-alert);
+    font-weight: 700;
+    margin-left: 5px;
+}
+.form-group input:not([type="checkbox"]), 
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-sizing: border-box;
+    font-size: 1em;
+}
+.small-info {
+    font-size: 0.8em;
+    color: #999;
+    margin-top: 5px;
+}
+.checkbox-group {
+    display: flex;
+    align-items: center;
+    margin-top: 15px;
+    padding: 10px;
+    border: 1px dashed #eee;
+    border-radius: 6px;
+}
+
+/* FORM BUTTONS */
+.form-actions {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+    text-align: right;
+}
+.btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    margin-left: 10px;
+    transition: opacity 0.3s;
+}
+.btn-primary-submit { background-color: var(--primary-color); }
+.btn-secondary-reset { background-color: var(--text-light); }
+.btn-warning { background-color: var(--orange-warning); }
+
+
+/* PROFILE SPESIFIK */
+.profile-info-display {
+    display: flex;
+    align-items: center;
+    padding-bottom: 20px;
+    margin-bottom: 30px;
+    border-bottom: 1px solid #eee;
+}
+.profile-avatar-user {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 3px solid var(--red-alert);
+    margin-right: 20px;
+    flex-shrink: 0;
+}
+
+
+/* ------------------------------------ */
+/* --- 4. RIWAYAT (user_page_history.html) --- */
+/* ------------------------------------ */
+
+.filter-controls {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+.filter-controls input[type="text"] {
+    flex-grow: 1;
+    max-width: 400px;
+}
+.filter-controls select {
+    padding: 10px 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1em;
+}
+
+.report-table-container {
+    overflow-x: auto;
+    background: white;
+    border-radius: 10px;
+    box-shadow: var(--default-shadow);
+    padding: 15px;
+    margin-top: 20px;
+}
+.report-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+.report-table th, .report-table td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+}
+.report-table thead th {
+    background-color: var(--bone-white);
+    color: var(--maroon-dark);
+    font-weight: 600;
+}
+
+.status-badge {
+    color: white;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 0.8em;
+    font-weight: 600;
+}
+.status-baru-bg { background-color: var(--primary-color); }
+.status-proses-bg { background-color: var(--orange-warning); }
+.status-selesai-bg { background-color: var(--green-success); }
+.btn-detail {
+    background-color: var(--blue-info);
+    color: white;
+    padding: 8px 12px;
+}
+
+/* ------------------------------------ */
+/* --- 5. UNEG-UNEG (user_page_uneg_uneg.html) --- */
+/* ------------------------------------ */
+
+.uneg-uneg-section {
+    max-width: 1000px;
+    margin: 30px auto;
+}
+.uneg-uneg-grid {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 30px;
+    margin-top: 30px;
+}
+.form-container-small {
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: var(--default-shadow);
+    height: fit-content;
+}
+.form-container-small h2 {
+    font-size: 1.2em;
+    color: var(--primary-color);
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+.comments-container {
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: var(--default-shadow);
+}
+.comments-container h2 {
+    font-size: 1.2em;
+    color: var(--primary-color);
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+.comment-item {
+    padding: 15px 0;
+    border-bottom: 1px dashed #eee;
+}
+.comment-author {
+    font-weight: 700;
+    color: var(--maroon-dark);
+    display: block;
+    margin-bottom: 5px;
+}
+.comment-date {
+    font-size: 0.8em;
+    color: #999;
+    margin-top: 5px;
+    display: block;
+}
+
+
+/* ------------------------------------ */
+/* --- 6. MEDIA QUERIES (RESPONSIVE) --- */
+/* ------------------------------------ */
+
+@media (max-width: 992px) {
+    .user-header {
+        padding: 15px 20px;
+    }
+    .user-nav .nav-link {
+        margin-left: 10px;
+    }
+    .user-main-content {
+        padding: 20px;
+    }
+}
+
+@media (max-width: 850px) {
+    .uneg-uneg-grid {
+        grid-template-columns: 1fr; /* Uneg-Uneg jadi tumpukan di layar kecil */
+    }
+}
+
+@media (max-width: 768px) {
+    .user-header {
+        flex-direction: column;
+    }
+    .user-nav {
+        margin-top: 15px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .user-nav .nav-link {
+        margin: 5px 10px;
+    }
+    
+    /* Responsive Table */
+    .report-table thead {
+        display: none;
+    }
+    .report-table, .report-table tbody, .report-table tr, .report-table td {
+        display: block;
+        width: 100%;
+    }
+    .report-table tr {
+        margin-bottom: 20px;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        box-shadow: var(--default-shadow);
+        padding: 10px;
+    }
+    .report-table td {
+        text-align: right;
+        padding-left: 50%;
+        position: relative;
+        border-bottom: none;
+    }
+    .report-table td::before {
+        content: attr(data-label);
+        position: absolute;
+        left: 10px;
+        width: 45%;
+        padding-right: 10px;
+        white-space: nowrap;
+        font-weight: 600;
+        color: var(--maroon-dark);
+        text-align: left;
+    }
+    
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 kolom di HP */
+    }
+    .filter-controls {
+        flex-direction: column;
+    }
+}
+
+/* END user_page.css */

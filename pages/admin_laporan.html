@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keluhan Masuk - Administrasi</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/dashboard.css">
+    <link rel="stylesheet" href="../css/admin_laporan.css"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="dashboard-layout">
+        <aside class="sidebar">
+            <div class="logo"><i class="fas fa-user-shield logo-icon" style="color: var(--red-alert);"></i> ADMIN <span style="color:white;"> SISTEM</span></div> 
+            <nav class="nav-menu">
+                <a href="admin_dashboard.html" class="nav-item"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+                <a href="admin_laporan.html" class="nav-item active"><i class="fas fa-file-alt"></i> Keluhan Masuk</a>
+                <a href="admin_penanganan.html" class="nav-item"><i class="fas fa-tools"></i> Cara Penanganan</a>
+                <a href="admin_uneg_uneg.html" class="nav-item"><i class="fas fa-comments"></i> Uneg-Uneg Warga</a>
+                <a href="../index.html" class="nav-item logout-btn"><i class="fas fa-sign-out-alt"></i> Logout</a>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <header class="header">
+                <h2>Daftar Keluhan Resmi Masuk</h2>
+                <p>Kelola semua laporan formal dari warga yang membutuhkan penanganan langsung di lapangan.</p>
+                <div class="alert alert-danger" style="margin-top: 15px;">
+                    <i class="fas fa-exclamation-triangle"></i> **Peringatan:** Ada **5** Laporan yang statusnya masih **"Baru"** atau **"Menunggu Konfirmasi"**.
+                </div>
+            </header>
+
+            <section class="content-area">
+                <div class="table-actions">
+                    <input type="text" placeholder="Cari ID/Judul Laporan..." class="input-filter">
+                    <select class="input-filter">
+                        <option value="all">Status: Semua</option>
+                        <option value="Baru">Baru (2)</option>
+                        <option value="Diproses">Diproses (3)</option>
+                        <option value="Selesai">Selesai (5)</option>
+                    </select>
+                </div>
+
+                <div class="responsive-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Judul Laporan</th>
+                                <th>Tanggal</th>
+                                <th>Kategori</th>
+                                <th>Status</th>
+                                <th>Aksi</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr data-status="Baru">
+                                <td>#L0012</td>
+                                <td>Jalan Berlubang Parah di Depan Sekolah</td>
+                                <td>18 Okt 2025</td>
+                                <td>Infrastruktur</td>
+                                <td><span class="status-badge status-baru">Baru</span></td>
+                                <td><button class="btn btn-detail">Detail & Tanggapi</button></td>
+                            </tr>
+                            <tr data-status="Diproses">
+                                <td>#L0011</td>
+                                <td>Antrean Panjang Pembuatan KTP di Kecamatan</td>
+                                <td>15 Okt 2025</td>
+                                <td>Layanan Publik</td>
+                                <td><span class="status-badge status-proses">Diproses</span></td>
+                                <td><button class="btn btn-detail">Lihat Progres</button></td>
+                            </tr>
+                             <tr data-status="Diproses">
+                                <td>#L0010</td>
+                                <td>Lampu Jalan Mati Sepanjang 1 KM</td>
+                                <td>12 Okt 2025</td>
+                                <td>Penerangan</td>
+                                <td><span class="status-badge status-proses">Diproses</span></td>
+                                <td><button class="btn btn-detail">Lihat Progres</button></td>
+                            </tr>
+                            <tr data-status="Baru">
+                                <td>#L0009</td>
+                                <td>Pohon Tumbang Belum Dievakuasi Total</td>
+                                <td>08 Okt 2025</td>
+                                <td>Bencana</td>
+                                <td><span class="status-badge status-baru">Baru</span></td>
+                                <td><button class="btn btn-detail">Detail & Tanggapi</button></td>
+                            </tr>
+                            <tr data-status="Selesai">
+                                <td>#L0008</td>
+                                <td>Kebocoran Pipa Air Bersih Utama</td>
+                                <td>01 Okt 2025</td>
+                                <td>Fasilitas Umum</td>
+                                <td><span class="status-badge status-selesai">Selesai</span></td>
+                                <td><button class="btn btn-detail">Lihat Solusi</button></td>
+                            </tr>
+                            </tbody>
+                    </table>
+                </div>
+            </section>
+        </main>
+    </div>
+</body>
+</html>

@@ -1,0 +1,271 @@
+/* ==================================== */
+/* css/admin_dashboard.css - GAYA BARU (MODERN & FOKUS) */
+/* ==================================== */
+
+/* --- HEADER & PROFILE --- */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* Rata tengah vertikal */
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #ddd;
+}
+.admin-name-highlight {
+    color: var(--maroon-dark);
+    font-weight: 800;
+}
+.profile-card-small {
+    background: white;
+    padding: 10px 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    border-right: 5px solid var(--maroon);
+    flex-shrink: 0;
+}
+.profile-avatar {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    margin-right: 10px;
+    border: 2px solid var(--red-alert);
+}
+.profile-name {
+    font-weight: 700;
+    color: var(--maroon-dark);
+    font-size: 1em;
+}
+.btn-profile {
+    font-size: 0.8em;
+    color: var(--blue-info);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+/* --- MAIN GRID LAYOUT --- */
+.dashboard-grid-main {
+    display: grid;
+    grid-template-columns: 2fr 1fr; /* Kolom Kiri (Summary) lebih lebar dari Kanan (Aksi) */
+    gap: 30px;
+}
+
+/* --- KOLOM KIRI (SUMMARY) --- */
+.grid-left-summary {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+/* 1. KARTU UTAMA (URGENCY) - HIGH CONTRAST */
+.main-stat-card {
+    background: var(--red-alert); /* Warna Merah Menyala */
+    color: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 8px 15px rgba(255, 0, 0, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.stat-icon-large {
+    font-size: 3em;
+    margin-right: 20px;
+    opacity: 0.8;
+}
+.stat-number-main {
+    font-size: 3.5em;
+    font-weight: 900;
+    line-height: 1;
+    display: block;
+}
+.stat-label-main {
+    font-size: 1.1em;
+    font-weight: 600;
+    opacity: 0.9;
+}
+.btn-action-main {
+    background: white;
+    color: var(--red-alert);
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: background 0.3s;
+}
+.btn-action-main:hover {
+    background: #f0f0f0;
+}
+
+/* 2. STATISTIK MINI GRID */
+.stats-mini-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+.mini-card {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: var(--default-shadow);
+    text-align: center;
+}
+.mini-card i {
+    font-size: 1.5em;
+    margin-bottom: 5px;
+    color: var(--maroon);
+}
+.mini-number {
+    font-size: 1.8em;
+    font-weight: 800;
+    display: block;
+}
+.mini-label {
+    font-size: 0.8em;
+    color: #666;
+    font-weight: 600;
+}
+
+/* 3. KARTU GRAFIK (Waktu Respon) */
+.chart-card {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: var(--default-shadow);
+    height: 250px;
+}
+.chart-card h3 {
+    font-size: 1.2em;
+    color: var(--maroon-dark);
+    margin-bottom: 15px;
+}
+.time-average {
+    font-size: 2em;
+    font-weight: 800;
+    color: var(--blue-info);
+    display: block;
+    margin-bottom: 10px;
+}
+.chart-area-simulasi {
+    position: relative;
+    height: 120px;
+    border-bottom: 2px solid var(--bone-white-dark);
+}
+.line-chart-dots span {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--blue-info);
+    transform: translate(-50%, 50%);
+    box-shadow: 0 0 0 3px rgba(66, 133, 244, 0.4);
+}
+
+/* --- KOLOM KANAN (AKSI & LOG) --- */
+.grid-right-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+/* Aksi Cepat (List) */
+.quick-action-list {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: var(--default-shadow);
+    flex-grow: 1;
+}
+.quick-action-list h3 {
+    font-size: 1.1em;
+    color: var(--maroon-dark);
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+.action-btn-list {
+    display: flex;
+    align-items: center;
+    padding: 12px 15px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    font-weight: 500;
+    text-decoration: none;
+    color: white;
+    transition: transform 0.2s;
+}
+.action-btn-list i {
+    font-size: 1em;
+    margin-right: 15px;
+}
+.action-btn-list:hover {
+    transform: translateX(5px);
+    opacity: 0.9;
+}
+.action-btn-list.primary { background-color: var(--maroon); }
+.action-btn-list.info { background-color: var(--blue-info); }
+.action-btn-list.success { background-color: var(--green-success); }
+.action-btn-list.warning { background-color: var(--orange-warning); }
+
+/* Log Aktivitas */
+.activity-log-card {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: var(--default-shadow);
+}
+.activity-log-card h3 {
+    font-size: 1.1em;
+    color: var(--maroon-dark);
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+.activity-list {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 15px;
+}
+.activity-list li {
+    padding: 8px 0;
+    font-size: 0.9em;
+    color: #555;
+    border-bottom: 1px dashed #eee;
+}
+.activity-list li i {
+    font-size: 0.5em;
+    margin-right: 10px;
+}
+.activity-new { color: var(--red-alert); }
+.activity-process { color: var(--orange-warning); }
+.activity-done { color: var(--green-success); }
+
+.btn-view-all {
+    background: var(--bone-white-dark);
+    color: var(--text-light);
+    border: none;
+    padding: 8px 15px;
+    border-radius: 6px;
+    width: 100%;
+    cursor: pointer;
+    font-weight: 600;
+}
+.btn-view-all:hover {
+    background: #ddd;
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 992px) {
+    .dashboard-grid-main {
+        grid-template-columns: 1fr; /* Satu kolom di layar kecil/tablet */
+    }
+    .main-stat-card {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 25px;
+    }
+    .btn-action-main {
+        margin-top: 15px;
+        width: 100%;
+        text-align: center;
+    }
+}

@@ -1,0 +1,70 @@
+/* ==================================== */
+/* css/admin_penanganan.css - GAYA KHUSUS HALAMAN PENANGANAN */
+/* ==================================== */
+
+.prosedur-card {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: var(--default-shadow);
+    margin-bottom: 30px;
+    /* Memberi garis tegas di kiri sesuai tema */
+    border-left: 5px solid var(--maroon); 
+}
+
+.prosedur-card h3 {
+    color: var(--maroon-dark);
+    margin-bottom: 20px;
+    border-bottom: 2px dashed var(--bone-white-dark);
+    padding-bottom: 10px;
+    font-weight: 700;
+}
+
+.prosedur-card h3 i {
+    margin-right: 10px;
+    color: var(--red-alert);
+}
+
+/* --------------------------------- */
+/* KUSTOMISASI NOMOR URUT (List Item) */
+/* --------------------------------- */
+
+.prosedur-list {
+    list-style: none; /* HILANGKAN list bawaan */
+    counter-reset: my-counter; /* Mulai hitungan dari 0 */
+    margin-bottom: 25px;
+}
+
+.prosedur-list li {
+    padding: 12px 0 12px 30px; /* Jarak agar tidak bertabrakan dengan nomor custom */
+    position: relative;
+    font-size: 1em;
+    border-bottom: 1px solid #eee;
+    color: var(--text-light);
+}
+
+/* Bagian INI yang menciptakan lingkaran nomor (1, 2, 3) */
+.prosedur-list li:before {
+    content: counter(my-counter); /* Ambil nilai hitungan */
+    counter-increment: my-counter; /* Tambah hitungan 1 */
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    
+    /* Gaya Lingkaran */
+    width: 25px;
+    height: 25px;
+    line-height: 25px;
+    text-align: center;
+    background: var(--maroon);
+    color: white;
+    border-radius: 50%;
+    font-size: 0.8em;
+    font-weight: 700;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.prosedur-list li:last-child {
+    border-bottom: none;
+}
