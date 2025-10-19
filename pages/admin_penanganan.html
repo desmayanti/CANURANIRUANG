@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SOP Penanganan - Administrasi</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/dashboard.css">
+    
+    <link rel="stylesheet" href="../css/admin_penanganan.css"> 
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="dashboard-layout">
+        
+        <aside class="sidebar">
+            <div class="logo">
+                <i class="fas fa-user-shield logo-icon" style="color: var(--red-alert);"></i> ADMIN <span style="color:white;"> SISTEM</span>
+            </div> 
+            
+            <nav class="nav-menu">
+                <a href="admin_dashboard.html" class="nav-item"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+                <a href="admin_laporan.html" class="nav-item"><i class="fas fa-file-alt"></i> Keluhan Masuk</a>
+                <a href="admin_penanganan.html" class="nav-item active"><i class="fas fa-tools"></i> Cara Penanganan</a>
+                <a href="admin_uneg_uneg.html" class="nav-item"><i class="fas fa-comments"></i> Uneg-Uneg Warga</a>
+                <a href="../index.html" class="nav-item logout-btn"><i class="fas fa-sign-out-alt"></i> Logout</a>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <header class="header">
+                <h2>Prosedur Standar Penanganan (SOP)</h2>
+                <p>Panduan langkah-langkah untuk memproses Keluhan Resmi dan Uneg-Uneg Warga dengan cepat dan tepat.</p>
+            </header>
+
+            <section class="content-area">
+                
+                <div class="prosedur-card">
+                    <h3><i class="fas fa-clipboard-list"></i> SOP Keluhan Resmi (Laporan ID)</h3>
+                    
+                    <ol class="prosedur-list">
+                        <li>**Verifikasi Laporan:** Cek keaslian pelapor, lokasi, dan bukti (foto/dokumen). Pastikan laporan valid.</li>
+                        <li>**Klasifikasi Urgensi:** Tentukan kategori (Infrastruktur, Layanan, Keamanan, dll.) dan tingkat urgensi (Normal/Urgent).</li>
+                        <li>**Disposisi Unit:** Teruskan laporan ke dinas/unit terkait (misal: PU untuk Infrastruktur) melalui surat resmi.</li>
+                        <li>**Penanganan Lapangan:** Unit terkait melakukan aksi, mengambil foto/video sebagai bukti penanganan di lokasi.</li>
+                        <li>**Konfirmasi & Tutup:** Admin menerima hasil penanganan, memperbarui status menjadi 'Selesai', dan memberi tanggapan final ke pelapor.</li>
+                    </ol>
+                    <button class="btn btn-primary" style="background: var(--blue-info);">
+                        <i class="fas fa-download"></i> Unduh Dokumen SOP Lengkap
+                    </button>
+                </div>
+                
+                <div class="prosedur-card">
+                    <h3><i class="fas fa-lightbulb"></i> SOP Penanganan Uneg-Uneg (Aspirasi)</h3>
+                    
+                    <ol class="prosedur-list">
+                        <li>**Review Konten:** Baca dan analisis apakah aspirasi tersebut berupa kritik, saran, atau apresiasi murni.</li>
+                        <li>**Pencatatan Formal:** Catat usulan yang konstruktif dan masukkan ke dalam daftar agenda rapat evaluasi publik/unit terkait.</li>
+                        <li>**Tanggapan Publik:** Beri tanggapan formal melalui sistem bahwa aspirasi sudah diterima dan akan dipertimbangkan/ditindaklanjuti.</li>
+                        <li>**Perubahan Status:** Ubah status menjadi 'Diproses' (jika butuh tindak lanjut) atau 'Selesai' (jika sudah ditanggapi/diarsip).</li>
+                    </ol>
+                    <button class="btn btn-detail" style="background: var(--green-success);">
+                        <i class="fas fa-check"></i> Lihat Daftar Aspirasi Prioritas
+                    </button>
+                </div>
+                
+            </section>
+        </main>
+    </div>
+    
+    <script src="../js/main.js"></script> 
+</body>
+</html>

@@ -1,0 +1,81 @@
+/* ==================================== */
+/* css/admin_laporan.css - GAYA KHUSUS TABEL LAPORAN */
+/* ==================================== */
+
+.table-actions {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+.table-actions .input-filter {
+    padding: 10px 15px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.responsive-table {
+    overflow-x: auto;
+    background: white;
+    border-radius: 12px;
+    box-shadow: var(--default-shadow);
+    padding: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 700px; /* Agar tampilan di HP tidak terlalu sempit */
+}
+
+th, td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid var(--bone-white-dark);
+}
+
+th {
+    background-color: var(--maroon-dark);
+    color: white;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.9em;
+}
+
+tbody tr:hover {
+    background-color: var(--bone-white);
+    cursor: pointer;
+}
+
+/* Status Badges */
+.status-badge {
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 0.8em;
+    font-weight: 600;
+    color: white;
+    text-align: center;
+    display: inline-block;
+}
+
+.status-baru {
+    background-color: var(--red-alert);
+}
+.status-proses {
+    background-color: var(--orange-warning);
+}
+.status-selesai {
+    background-color: var(--green-success);
+}
+.btn-detail {
+    background-color: var(--maroon);
+    color: white;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+.btn-detail:hover {
+    background-color: var(--maroon-dark);
+}

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Riwayat Laporan - Sistem Aspirasi</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="../css/main.css">
+    
+    <link rel="stylesheet" href="../css/user_page.css"> 
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="user-layout">
+        
+        <header class="user-header">
+            <div class="logo">
+                <i class="fas fa-home logo-icon"></i> <span class="logo-text">ASPIRASI WARGA</span>
+            </div>
+            <nav class="user-nav">
+                <a href="user_page.html" class="nav-link"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+                <a href="user_page_lapor.html" class="nav-link"><i class="fas fa-bullhorn"></i> Buat Laporan</a>
+                <a href="user_page_history.html" class="nav-link active"><i class="fas fa-history"></i> Riwayat</a>
+                <a href="user_page_uneg_uneg.html" class="nav-link"><i class="fas fa-comments"></i> Uneg-Uneg</a>
+                <a href="user_page_profile.html" class="nav-link"><i class="fas fa-user-circle"></i> Profil</a>
+                <a href="../index.html" class="nav-link logout-btn"><i class="fas fa-sign-out-alt"></i> Logout</a>
+            </nav>
+        </header>
+
+        <main class="user-main-content">
+            <section class="history-section">
+                <h1><i class="fas fa-clipboard-list"></i> Riwayat Laporan Saya</h1>
+                <p class="description">Total 18 Laporan telah Anda kirimkan. Klik 'Detail' untuk melihat progres lengkap.</p>
+
+                <div class="filter-controls">
+                    <input type="text" placeholder="Cari berdasarkan ID atau Judul...">
+                    <select>
+                        <option value="all">Semua Status</option>
+                        <option value="baru">Baru</option>
+                        <option value="proses">Diproses</option>
+                        <option value="selesai">Selesai</option>
+                    </select>
+                </div>
+
+                <div class="report-table-container">
+                    <table class="report-table">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Judul Laporan</th>
+                                <th>Tanggal Kirim</th>
+                                <th>Status</th>
+                                <th>Aksi</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="status-selesai">
+                                <td data-label="ID">#0017</td>
+                                <td data-label="Judul">Kerusakan jalan di Jl. Sudirman</td>
+                                <td data-label="Tanggal Kirim">18/10/2025</td>
+                                <td data-label="Status"><span class="status-badge status-selesai-bg">Selesai</span></td>
+                                <td data-label="Aksi"><button class="btn btn-detail">Detail</button></td>
+                            </tr>
+                            <tr class="status-proses">
+                                <td data-label="ID">#0018</td>
+                                <td data-label="Judul">Penanganan sampah yang lambat di Blok A</td>
+                                <td data-label="Tanggal Kirim">25/10/2025</td>
+                                <td data-label="Status"><span class="status-badge status-proses-bg">Diproses</span></td>
+                                <td data-label="Aksi"><button class="btn btn-detail">Detail</button></td>
+                            </tr>
+                            <tr class="status-baru">
+                                <td data-label="ID">#0019</td>
+                                <td data-label="Judul">Pungutan liar saat pengurusan surat</td>
+                                <td data-label="Tanggal Kirim">01/11/2025</td>
+                                <td data-label="Status"><span class="status-badge status-baru-bg">Baru</span></td>
+                                <td data-label="Aksi"><button class="btn btn-detail">Detail</button></td>
+                            </tr>
+                            <tr class="status-selesai">
+                                <td data-label="ID">#0016</td>
+                                <td data-label="Judul">Aspirasi penambahan lampu jalan</td>
+                                <td data-label="Tanggal Kirim">10/10/2025</td>
+                                <td data-label="Status"><span class="status-badge status-selesai-bg">Selesai</span></td>
+                                <td data-label="Aksi"><button class="btn btn-detail">Detail</button></td>
+                            </tr>
+                            </tbody>
+                    </table>
+                </div>
+
+                <div class="pagination">
+                    <button class="btn" disabled>Sebelumnya</button>
+                    <span>Halaman 1 dari 4</span>
+                    <button class="btn">Selanjutnya</button>
+                </div>
+            </section>
+        </main>
+    </div>
+    <script src="../js/user_script.js"></script>
+</body>
+</html>

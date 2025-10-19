@@ -1,0 +1,136 @@
+/* ==================================== */
+/* css/admin_profile.css - GAYA KHUSUS HALAMAN PROFIL */
+/* ==================================== */
+
+/* --- LAYOUT PROFIL --- */
+.profile-area {
+    display: flex;
+    justify-content: center; 
+    padding: 20px 0;
+}
+
+.profile-card-large {
+    width: 100%;
+    max-width: 800px; 
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: var(--default-shadow);
+    transition: all 0.3s ease-in-out;
+}
+
+.profile-card-large:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.profile-header-info {
+    text-align: center;
+    padding-bottom: 30px;
+    margin-bottom: 30px;
+    border-bottom: 1px solid #eee;
+}
+
+.profile-avatar-large {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%; 
+    object-fit: cover; 
+    margin-bottom: 15px;
+    border: 5px solid var(--maroon); 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+}
+
+.profile-name-large {
+    font-size: 1.8em;
+    font-weight: 800;
+    color: var(--maroon-dark); 
+    margin-bottom: 5px;
+}
+
+.profile-role-large {
+    color: var(--text-light); 
+    font-size: 1em;
+    margin-bottom: 15px;
+}
+
+.btn-upload-foto {
+    background-color: var(--blue-info); 
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+.btn-upload-foto:hover {
+    background-color: #3183df; 
+}
+
+/* --- FORM GAYA PROFIL --- */
+.form-container h3 {
+    color: var(--red-alert); 
+    border-bottom: 2px solid var(--bone-white-dark);
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    font-weight: 600;
+    font-size: 1.2em;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 600;
+    color: var(--maroon-dark);
+    margin-bottom: 5px;
+    font-size: 0.9em;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="password"],
+.form-group select {
+    width: 100%;
+    padding: 10px 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-sizing: border-box;
+    font-size: 1em;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    border-color: var(--blue-info);
+    box-shadow: 0 0 0 3px rgba(66, 133, 244, 0.2); 
+    outline: none;
+}
+
+/* Gaya Tombol Aksi */
+.btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    margin-right: 10px;
+    transition: opacity 0.3s, transform 0.2s;
+}
+.btn:hover {
+    opacity: 0.9;
+    transform: translateY(-2px);
+}
+.btn-success { background-color: var(--green-success); }
+.btn-warning { background-color: var(--orange-warning); }
+
+/* MEDIA QUERY */
+@media (max-width: 768px) {
+    .profile-card-large {
+        padding: 20px;
+    }
+}

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buat Laporan Baru - Sistem Aspirasi</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="../css/main.css">
+    
+    <link rel="stylesheet" href="../css/user_page.css"> 
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="user-layout">
+        
+        <header class="user-header">
+            <div class="logo">
+                <i class="fas fa-home logo-icon"></i> <span class="logo-text">ASPIRASI WARGA</span>
+            </div>
+            <nav class="user-nav">
+                <a href="user_page.html" class="nav-link"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+                <a href="user_page_lapor.html" class="nav-link active"><i class="fas fa-bullhorn"></i> Buat Laporan</a>
+                <a href="user_page_history.html" class="nav-link"><i class="fas fa-history"></i> Riwayat</a>
+                <a href="user_page_uneg_uneg.html" class="nav-link"><i class="fas fa-comments"></i> Uneg-Uneg</a>
+                <a href="user_page_profile.html" class="nav-link"><i class="fas fa-user-circle"></i> Profil</a>
+                <a href="../index.html" class="nav-link logout-btn"><i class="fas fa-sign-out-alt"></i> Logout</a>
+            </nav>
+        </header>
+
+        <main class="user-main-content form-page">
+            <section class="form-container-large">
+                <h1><i class="fas fa-file-signature"></i> Formulir Pengaduan/Aspirasi</h1>
+                <p class="description">Harap isi formulir ini dengan informasi yang akurat dan lengkap. Laporan Anda bersifat rahasia.</p>
+
+                <form id="laporan-form">
+                    
+                    <div class="form-group">
+                        <label for="kategori"><i class="fas fa-tag"></i> Kategori Laporan <span class="required">*</span></label>
+                        <select id="kategori" name="kategori" required>
+                            <option value="">-- Pilih Kategori --</option>
+                            <option value="infrastruktur">Infrastruktur (Jalan, Air, Listrik)</option>
+                            <option value="layanan">Layanan Publik (Pungli, Pelayanan Lambat)</option>
+                            <option value="lingkungan">Lingkungan (Sampah, Banjir, Polusi)</option>
+                            <option value="keamanan">Keamanan & Ketertiban</option>
+                            <option value="aspirasi">Aspirasi Umum/Saran</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="judul"><i class="fas fa-heading"></i> Judul Laporan Singkat <span class="required">*</span></label>
+                        <input type="text" id="judul" name="judul" placeholder="Contoh: Jalan berlubang di Jl. Sudirman" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="detail"><i class="fas fa-align-left"></i> Detail Masalah <span class="required">*</span></label>
+                        <textarea id="detail" name="detail" rows="6" placeholder="Jelaskan secara rinci lokasi, waktu kejadian, dan dampak dari masalah tersebut." required></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="lokasi"><i class="fas fa-map-marker-alt"></i> Lokasi/Alamat Kejadian <span class="required">*</span></label>
+                        <input type="text" id="lokasi" name="lokasi" placeholder="Contoh: Depan warung Bunga, Blok C No. 5" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="bukti"><i class="fas fa-camera"></i> Upload Bukti Foto (Maks. 3)</label>
+                        <input type="file" id="bukti" name="bukti" accept="image/*" multiple>
+                        <p class="small-info">Ukuran maksimal 2MB per foto. Dukungan format: JPG, PNG.</p>
+                    </div>
+
+                    <div class="form-group checkbox-group">
+                        <input type="checkbox" id="anonim" name="anonim">
+                        <label for="anonim">Kirim sebagai **Anonim** (Nama Anda disembunyikan dari publik)</label>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="submit" class="btn btn-primary-submit"><i class="fas fa-paper-plane"></i> Kirim Laporan</button>
+                        <button type="reset" class="btn btn-secondary-reset"><i class="fas fa-eraser"></i> Reset Formulir</button>
+                    </div>
+                </form>
+            </section>
+        </main>
+    </div>
+    <script src="../js/user_script.js"></script>
+</body>
+</html>

@@ -1,0 +1,181 @@
+/* ==================================== */
+/* css/dashboard.css - GAYA LAYOUT UTAMA DASHBOARD */
+/* ==================================== */
+
+/* Mengatur Layout Utama (Sidebar + Main Content) */
+.dashboard-layout {
+    display: flex;
+    min-height: 100vh; /* Memastikan layout setinggi viewport */
+}
+
+/* 1. GAYA SIDEBAR (Panel Kiri) */
+.sidebar {
+    width: 250px;
+    background-color: #5d0202; /* Maroon Tua (Asumsi Warna Utama) */
+    color: white;
+    padding: 20px 0;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0; /* Jangan biarkan sidebar menyusut */
+}
+
+.logo {
+    font-size: 1.5em;
+    font-weight: 800;
+    text-align: center;
+    padding: 10px 20px 30px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+.logo-icon {
+    margin-right: 5px;
+}
+
+/* Menu Navigasi */
+.nav-menu {
+    flex-grow: 1;
+    padding-top: 20px;
+}
+
+.nav-item {
+    display: flex;
+    align-items: center;
+    padding: 15px 20px;
+    text-decoration: none;
+    color: #f0f0f0; /* Warna teks terang */
+    font-weight: 500;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.nav-item:hover {
+    background-color: rgba(255, 255, 255, 0.1); /* Hover transparan */
+    color: white;
+}
+
+.nav-item.active {
+    background-color: #8B0000; /* Maroon sedikit lebih terang untuk yang aktif */
+    color: white;
+    border-left: 5px solid #ff4d4d; /* Garis Merah/Aksen */
+}
+
+.nav-item i {
+    margin-right: 15px;
+    font-size: 1.1em;
+}
+
+/* Logout Button */
+.logout-btn {
+    margin-top: auto; /* Dorong ke bawah */
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    color: #ff4d4d; /* Warna merah untuk Logout */
+}
+.logout-btn:hover {
+    background-color: #8B0000;
+    color: white;
+}
+
+
+/* 2. GAYA MAIN CONTENT (Panel Kanan) */
+.main-content {
+    flex-grow: 1;
+    background-color: #f8f9fa; /* Background abu-abu muda */
+    padding: 30px;
+}
+
+.header {
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #ddd;
+}
+
+.header h2 {
+    font-size: 1.8em;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.header p {
+    color: #666;
+    font-size: 1em;
+}
+
+/* Area Konten Utama */
+.content-area {
+    margin-top: 20px;
+}
+
+
+/* 3. GAYA ALERT & BOX PESAN */
+.alert {
+    padding: 15px 20px;
+    border-radius: 8px;
+    border: 1px solid transparent;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+}
+
+.alert i {
+    margin-right: 10px;
+    font-size: 1.1em;
+}
+
+.alert-info {
+    background-color: #d1ecf1;
+    border-color: #bee5eb;
+    color: #0c5460;
+}
+
+.alert-danger {
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+    color: #721c24;
+}
+
+/* 4. RESPONSIVE UTAMA (PENTING!) */
+@media (max-width: 768px) {
+    .dashboard-layout {
+        flex-direction: column; /* Sidebar ke atas, Content ke bawah */
+    }
+    
+    .sidebar {
+        width: 100%; /* Sidebar full lebar */
+        height: auto;
+        padding: 10px 0;
+    }
+    
+    .nav-menu {
+        display: flex;
+        flex-direction: row; /* Menu navigasi horizontal */
+        overflow-x: auto; /* Scroll horizontal jika menu terlalu banyak */
+        padding: 0;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .nav-item {
+        padding: 10px 15px;
+        flex-shrink: 0; /* Menu tidak menyusut */
+        border-left: none !important;
+        border-bottom: 3px solid transparent;
+    }
+    
+    .nav-item.active {
+        border-left: none !important;
+        border-bottom: 3px solid #ff4d4d; /* Garis aktif pindah ke bawah */
+        background-color: rgba(255, 255, 255, 0.1);
+    }
+    
+    .logo {
+        padding: 10px 20px;
+        border-bottom: none;
+    }
+    
+    .logout-btn {
+        display: none; /* Sembunyikan tombol logout di menu horizontal */
+    }
+
+    .main-content {
+        padding: 20px;
+    }
+}

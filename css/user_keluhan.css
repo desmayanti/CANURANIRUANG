@@ -1,0 +1,122 @@
+/* css/user_keluhan.css - KODE KHUSUS UNTUK HALAMAN KELUHAN USER (CLEANED & FIXED) */
+
+/* ======================== */
+/* GRID KELUHAN (Card Layout) */
+/* ======================== */
+.keluhan-list-container {
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.keluhan-grid {
+    display: grid;
+    /* Membuat kolom yang otomatis menyesuaikan lebar layar, minimal 300px */
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); 
+    gap: 25px;
+}
+
+.keluhan-card {
+    background: #fcfcfc;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border: 1px solid #eee;
+    position: relative;
+    display: flex; /* Tambahkan flex untuk mengatur tinggi konten */
+    flex-direction: column;
+    transition: box-shadow 0.3s, border-color 0.3s, transform 0.2s;
+}
+
+.keluhan-card:hover {
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+    border-color: var(--maroon);
+    transform: translateY(-2px);
+}
+
+.keluhan-card h3 {
+    color: var(--maroon-dark);
+    margin: 5px 0 8px 0;
+    font-size: 1.3em;
+}
+
+p.deskripsi-singkat {
+    font-size: 0.9em;
+    color: #666;
+    line-height: 1.4;
+    margin-bottom: 15px;
+    flex-grow: 1; /* PENTING: Memastikan deskripsi mengambil ruang agar footer di bawah */
+    overflow: hidden; 
+}
+
+/* Badge Status di Pojok */
+.status-badge {
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: white;
+    padding: 5px 12px;
+    font-size: 0.75em;
+    font-weight: 700;
+    border-top-right-radius: 8px;
+    border-bottom-left-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    background-color: var(--maroon); /* Default */
+}
+
+/* Meta Informasi (Kategori & Tanggal) */
+.card-meta {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.8em;
+    color: #999;
+    padding-bottom: 15px;
+    margin-top: 10px; /* Jarak atas */
+    margin-bottom: 15px;
+    border-bottom: 1px dashed #ddd;
+    flex-shrink: 0; /* Jaga agar meta tidak mengecil */
+}
+
+.card-meta i {
+    margin-right: 5px;
+    color: var(--maroon);
+}
+
+/* ======================== */
+/* AKSI TOMBOL */
+/* ======================== */
+.card-actions {
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
+    flex-shrink: 0;
+}
+
+.card-actions .btn {
+    padding: 8px 12px;
+    font-size: 0.85em;
+    border-radius: 5px;
+    cursor: pointer;
+    border: none;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.card-actions .btn-edit {
+    background-color: var(--blue-info);
+    color: white;
+}
+
+.card-actions .btn-delete {
+    background-color: var(--red-alert);
+    color: white;
+}
+
+.card-actions .btn-detail {
+    background-color: #ddd;
+    color: #555;
+}
+.card-actions .btn-detail:hover {
+    background-color: #ccc;
+}

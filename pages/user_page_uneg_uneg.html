@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forum Uneg-Uneg Warga - Sistem Aspirasi</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="../css/main.css">
+    
+    <link rel="stylesheet" href="../css/user_page.css"> 
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="user-layout">
+        
+        <header class="user-header">
+            <div class="logo">
+                <i class="fas fa-home logo-icon"></i> <span class="logo-text">ASPIRASI WARGA</span>
+            </div>
+            <nav class="user-nav">
+                <a href="user_page.html" class="nav-link"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+                <a href="user_page_lapor.html" class="nav-link"><i class="fas fa-bullhorn"></i> Buat Laporan</a>
+                <a href="user_page_history.html" class="nav-link"><i class="fas fa-history"></i> Riwayat</a>
+                <a href="user_page_uneg_uneg.html" class="nav-link active"><i class="fas fa-comments"></i> Uneg-Uneg</a>
+                <a href="user_page_profile.html" class="nav-link"><i class="fas fa-user-circle"></i> Profil</a>
+                <a href="../index.html" class="nav-link logout-btn"><i class="fas fa-sign-out-alt"></i> Logout</a>
+            </nav>
+        </header>
+
+        <main class="user-main-content">
+            <section class="uneg-uneg-section">
+                <h1><i class="fas fa-comments"></i> Forum Uneg-Uneg Warga</h1>
+                <p class="description">Bagikan pendapat, kritik, atau saran umum Anda di sini. Uneg-Uneg akan langsung tercatat di Admin.</p>
+                
+                <div class="uneg-uneg-grid">
+                    
+                    <div class="form-container-small">
+                        <h2><i class="fas fa-paper-plane"></i> KIRIM Uneg-Uneg Baru</h2> 
+                        <form id="uneg-uneg-form">
+                            <div class="form-group">
+                                <label for="nama_pengirim">Nama Anda (Otomatis dari Profil)</label>
+                                <input type="text" id="nama_pengirim" placeholder="Contoh: Rahmat H." value="Rahmat Hidayat (WRG-0012)" readonly>
+                            </div>
+                            <div class="form-group">
+                                <label for="pesan">Pesan Uneg-Uneg/Saran <span class="required">*</span></label>
+                                <textarea id="pesan" rows="4" placeholder="Ketik saran atau kritik Anda di sini..." required></textarea>
+                            </div>
+                            <div class="form-group checkbox-group">
+                                <input type="checkbox" id="anonim_uneg" name="anonim">
+                                <label for="anonim_uneg">Kirim Anonim</label>
+                            </div>
+                            <button type="submit" class="btn btn-primary-submit" style="width: 100%;"><i class="fas fa-share-square"></i> Selesai Kirim</button>
+                        </form>
+                    </div>
+
+                    <div class="comments-container">
+                        <h2><i class="fas fa-eye"></i> LIHAT Uneg-Uneg Terbaru Warga</h2>
+                        
+                        <div class="comment-item">
+                            <span class="comment-author">Anonim Warga</span>
+                            <p>"Pelayanan pengambilan KTP di kantor kecamatan sudah jauh lebih cepat, terima kasih atas perbaikan sistemnya!"</p>
+                            <span class="comment-date"><i class="far fa-clock"></i> 2 jam lalu</span>
+                            <button type="button" class="btn btn-sm btn-delete-uneg" style="background-color: #dc3545; color: white; margin-top: 5px;"><i class="fas fa-trash"></i> Hapus</button>
+                        </div>
+                        
+                        <div class="comment-item">
+                            <span class="comment-author">Ibu Siti Z.</span>
+                            <p>"Mohon dipertimbangkan untuk menambah jadwal kegiatan senam pagi di hari Sabtu."</p>
+                            <span class="comment-date"><i class="far fa-clock"></i> Kemarin</span>
+                            <button type="button" class="btn btn-sm btn-delete-uneg" style="background-color: #dc3545; color: white; margin-top: 5px;"><i class="fas fa-trash"></i> Hapus</button>
+                        </div>
+                        
+                        <div class="comment-item">
+                            <span class="comment-author">Warga WRG-0012</span>
+                            <p>"Beberapa kali lampu penerangan jalan di Blok C mati total, tolong dicek, admin."</p>
+                            <span class="comment-date"><i class="far fa-clock"></i> 3 hari lalu</span>
+                            <button type="button" class="btn btn-sm btn-delete-uneg" style="background-color: #dc3545; color: white; margin-top: 5px;"><i class="fas fa-trash"></i> Hapus</button>
+                        </div>
+
+                        <button class="btn btn-secondary-reset" style="width: 100%; margin-top: 20px;">Lihat Lebih Banyak</button>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+    
+    <script src="../js/user_script.js"></script>
+</body>
+</html>
